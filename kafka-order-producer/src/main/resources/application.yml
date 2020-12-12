@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+  activemq:
+    broker-url: localhost:9092
+#kafka:
+#  producer:
+#    bootstrap: localhost:9092
