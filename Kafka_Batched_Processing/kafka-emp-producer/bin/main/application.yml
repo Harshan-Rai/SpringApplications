@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      properties:
+        batch:
+          size : 5000
+        linger:
+          ms : 15000
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
