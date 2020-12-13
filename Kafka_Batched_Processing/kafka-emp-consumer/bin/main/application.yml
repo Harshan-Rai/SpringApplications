@@ -1,6 +1,3 @@
-server:
-  port: 8080
-
 spring:
    kafka:
     bootstrap-servers: localhost:9092
@@ -8,8 +5,8 @@ spring:
       type: batch
     
     consumer:
-      group-id: "default-consumer-group"
+      group-id: "default-group-id"
       auto-offset-reset: earliest
       enable-auto-commit: true
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer      
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer    

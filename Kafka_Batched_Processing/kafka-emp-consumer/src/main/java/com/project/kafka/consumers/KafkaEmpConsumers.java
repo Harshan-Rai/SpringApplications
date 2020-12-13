@@ -10,9 +10,28 @@ import org.springframework.stereotype.Service;
 public class KafkaEmpConsumers {
 	
 	private static final Logger log = LoggerFactory.getLogger(KafkaEmpConsumers.class);
+
+	@KafkaListener(topics = "t_emp_0")
+	public void consume1(ConsumerRecord<String, String> message) throws InterruptedException {
+		log.info("Key : {}, Topic Name : {}, Message : {}", message.key(), message.topic(), message.value());
+		
+	}
 	
-	@KafkaListener(topics = "test_emp_1")
-	public void consume33(ConsumerRecord<String, String> message) {
-		log.info("Key : {}, Topic Name {}, Message : {}", message.key(), message.topic(), message.value());
+	@KafkaListener(topics = "t_emp_1")
+	public void consume2(ConsumerRecord<String, String> message) throws InterruptedException {
+		log.info("Key : {}, Topic Name : {}, Message : {}", message.key(), message.topic(), message.value());
+		
+	}
+	
+	@KafkaListener(topics = "t_emp_2")
+	public void consume3(ConsumerRecord<String, String> message) throws InterruptedException {
+		log.info("Key : {}, Topic Name : {}, Message : {}", message.key(), message.topic(), message.value());
+		
+	}
+	
+	@KafkaListener(topics = "t_emp_3")
+	public void consume4(ConsumerRecord<String, String> message) throws InterruptedException {
+		log.info("Key : {}, Topic Name : {}, Message : {}", message.key(), message.topic(), message.value());
+		
 	}
 }
